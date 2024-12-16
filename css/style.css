@@ -1,0 +1,188 @@
+*{
+    font-family: sans-serif;
+}
+:root{
+    --main-clr: #1E202B;
+    --items-clr : #009AD8;
+}
+.container{
+    padding: 0 15px;
+}
+nav{
+    padding: 45px 0 !important;
+    background-color: var(--main-clr);
+}
+.navbar-toggler {
+     color: white;
+     border: 2px solid transparent;;
+     padding: 13px;
+     border-radius: 22px;
+     transition: .4s;
+}
+.navbar-toggler:hover{
+    border: 2px solid white;
+
+}
+.nav-item{
+    margin: 0 20px;
+    border-radius: 15px;
+    padding: 2px 20px;
+    border: 2px solid transparent;
+}
+.nav-item:hover{
+    border: 2px solid var(--items-clr);
+}
+#home-link{
+    border: 2px solid var(--items-clr);
+}
+
+.nav-link{
+  padding: 0 !important;
+}
+
+.logo-text{
+    position: absolute;
+    right: -17px;
+    top: 3px; 
+}
+.navbar-brand .clickhere{
+    font-size: 10px;
+    font-weight: 300;
+}
+/* ------------------------------------------------------------ */
+#home{
+    background-image: url(../imgs/home-bg.png);
+    background-position: top;
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    background-color:var(--main-clr);
+}
+
+#findInput,
+#subscripeInput{
+    background-color: var(--main-clr);
+    color: white;
+    height: 50px;
+    border-radius: 20px;
+    padding: 20px;
+    border: none;
+}
+#findInput::placeholder{
+    color: #707575;
+}
+#findInput:focus{
+    border: none;
+    outline: none;
+}
+
+#search,
+#subscripe{
+    position: absolute;
+    background-color: #009AD8;
+    right: 0px;
+    top: 49px;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 48px;  
+    color: white;
+}
+#subscripe{
+    padding: 9px 23px;
+    right: 4px;
+    top: 52px;
+}
+
+/* -------------------- */
+.col-md-4{
+    padding: 0 !important;
+}
+#today .date-day{
+    border-top-left-radius: 15px;
+}
+#twoDayesAfter .date-day{
+    border-top-right-radius: 15px;
+}
+#today .content{
+    border-bottom-left-radius: 15px;
+}
+#twoDayesAfter .content{
+    border-bottom-right-radius: 15px;
+}
+.side .date-day{
+    background-color: #2D303D;
+}
+.side .content{
+    background-color: #323544;
+    padding: 15px;
+}
+.location{
+    color:rgb(191, 193, 200);
+    font-size: 18px;
+}
+.deg{
+    font-size: 90px;
+    font-weight: 700;
+}
+.dayNight{
+    font-size:24px;
+    color: rgb(0, 154, 216);
+    font-weight: 700;
+}
+.status{
+    color:rgb(0, 154, 216);
+    font-size: 17px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#statusParamiters{
+    color: rgb(191, 193, 200);
+    font-weight: 300;
+}
+
+#tomorrow{
+    height: inherit;
+    background-color: #262936;
+}
+#tomorrow .date-day{
+    background-color: #222530;
+}
+#twoDayesAfter{
+    height: inherit;
+    background-color: #323544;
+}
+#twoDayesAfter .date-day{
+    background-color: #2D303D;
+}
+
+
+footer{
+    background-color: #262936;
+    color: white;
+}
+
+footer p{
+    color: rgb(191, 193, 200);
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.links li{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #009AD8;
+    background-color: #1e202b;
+    transition: .4s;
+}
+.links li:hover{
+    background-color: #20a3bd;
+    color: white !important;
+}
+.links li:hover a{
+    color: white !important;
+}
