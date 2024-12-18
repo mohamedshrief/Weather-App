@@ -8,9 +8,11 @@ let searchValue = "";
 // =========================== Global Functions Start ============================
 async function getData(location){
     let res = await fetch(`https://api.weatherapi.com/v1/forecast.json?q=${location}&days=3&key=1d4e784d9acf4153bf8205342241512`)
-    let daysForcast = await res.json() ;
-    console.log(daysForcast)
-    fillHtmlContant(daysForcast);
+    if(res.ok){
+        let daysForcast = await res.json() ;
+        console.log(daysForcast)
+        fillHtmlContant(daysForcast);
+    }
 }
 function getExactForcast(){
     if (navigator.geolocation) {
@@ -58,7 +60,7 @@ function fillHtmlContant(daysForcast){
     let monthName = date1.toLocaleString("en-us", { month: "long" });
     let choosedLocation = daysForcast.location.region
     let choosedLocationName = daysForcast.location.name
-    let degree = daysForcast.current.temp_c
+    let degree = daysForcast.current.temp_c;
     // ---------------------------------day1-----------------------------
 
     // =================================day2=============================
@@ -84,7 +86,7 @@ function fillHtmlContant(daysForcast){
                 <h3 class="location">${choosedLocation}</h3>
             </div>
             <div class="deg d-flex flex-column mb-0 justify-content-center px-4 align-items-center my-2">
-                ${degree}c
+                ${degree} °c
                 <div class="img">
                 <img src="https://${daysForcast.current.condition.icon}" alt="${daysForcast.current.condition.text}" class="w-100">
             </div>
@@ -93,11 +95,11 @@ function fillHtmlContant(daysForcast){
         <ul id="statusParamiters" class="list-unstyled d-flex justify-content-around">
             <li>
                 <i class="fa-solid fa-umbrella"></i>
-                20%
+                ${daysForcast.forecast.forecastday[0].day.daily_chance_of_rain} %
             </li>
             <li>
                 <i class="fa-solid fa-wind"></i>
-                18km/h
+                 ${daysForcast.current.wind_kph} km/h
             </li>
             <li>
                 <i class="fa-regular fa-compass"></i>
@@ -118,8 +120,8 @@ function fillHtmlContant(daysForcast){
                 <img src="https://${daysForcast.forecast.forecastday[1].day.condition.icon}" alt="${daysForcast.forecast.forecastday[1].day.condition.text}" class="w-100">
             </div>
             <div class="d-flex flex-wrap w-100 justify-content-evenly px-2">
-                <p class=" fs-3"> <span class="text-info">Max:</span> ${daysForcast.forecast.forecastday[1].day.maxtemp_c} c </p>
-                <p class=" fs-3"><span class="text-info">Min:</span> ${daysForcast.forecast.forecastday[1].day.mintemp_c} c </p>
+                <p class=" fs-3"> <span class="text-info">Max:</span> ${daysForcast.forecast.forecastday[1].day.maxtemp_c} °c </p>
+                <p class=" fs-3"><span class="text-info">Min:</span> ${daysForcast.forecast.forecastday[1].day.mintemp_c} °c </p>
             </div>
          
 
@@ -139,8 +141,8 @@ function fillHtmlContant(daysForcast){
                 <img src="https://${daysForcast.forecast.forecastday[2].day.condition.icon}" alt="${daysForcast.forecast.forecastday[2].day.condition.text}" class="w-100">
             </div>
             <div class="d-flex flex-wrap w-100 justify-content-evenly px-2">
-                <p class=" fs-3"> <span class="text-info">Max:</span> ${daysForcast.forecast.forecastday[2].day.maxtemp_c} c </p>
-                <p class=" fs-3"><span class="text-info">Min:</span> ${daysForcast.forecast.forecastday[2].day.mintemp_c} c </p>
+                <p class=" fs-3"> <span class="text-info">Max:</span> ${daysForcast.forecast.forecastday[2].day.maxtemp_c} °c </p>
+                <p class=" fs-3"><span class="text-info">Min:</span> ${daysForcast.forecast.forecastday[2].day.mintemp_c} °c </p>
             </div>
          
 
